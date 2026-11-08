@@ -36,7 +36,14 @@ Predict whether an individual's annual income exceeds $50,000 based on demograph
 | Support Vector Machine | High precision (0.757) — fewest false positives among all models. Good AUC (0.891) but moderate recall (0.557), suggesting it is conservative in predicting the >50K class. |
 | **Overall Winner** | **Decision Tree** — best balance of accuracy, AUC, F1, and MCC on this dataset. |
 
-## e. Live Streamlit App Link
+## e. Preprocessing Methodology
+
+1. **Missing values:** Rows with `?` values dropped (~3,600 rows removed), leaving 45,222 rows.
+2. **Train/Test split first:** 80/20 stratified split applied *before* any preprocessing to prevent data leakage.
+3. **ColumnTransformer:** `StandardScaler` for 6 numerical features; `OneHotEncoder(handle_unknown='ignore')` for 8 categorical features.
+4. **Pipeline:** Each classifier is wrapped in a `sklearn.Pipeline(preprocessor + classifier)` — the entire pipeline is saved as a single `.joblib` file. The Streamlit app loads these pipelines and calls `predict()` on raw feature data; no retraining occurs.
+
+## f. Live Streamlit App Link
 > [Add your deployed Streamlit app link here]
 
 ## Setup & Usage
