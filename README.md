@@ -11,7 +11,7 @@ Predict whether an individual's annual income exceeds $50,000 based on demograph
 - **Task:** Binary Classification
 
 ## c. GitHub Repository Link
-> [Add your GitHub repo link here]
+https://github.com/JessicaNaomiDsouza/adult-income-classifier
 
 ## d. Models Used
 
@@ -19,11 +19,11 @@ Predict whether an individual's annual income exceeds $50,000 based on demograph
 
 | ML Model Name | Accuracy | AUC | Precision | Recall | F1 | MCC |
 |---|---|---|---|---|---|---|
-| Logistic Regression | 0.8172 | 0.8473 | 0.7075 | 0.4478 | 0.5485 | 0.4592 |
-| Decision Tree | 0.8477 | 0.8926 | 0.7134 | 0.6441 | 0.6770 | 0.5789 |
-| KNN | 0.8239 | 0.8590 | 0.6693 | 0.5723 | 0.6170 | 0.5061 |
-| Naive Bayes | 0.7947 | 0.8478 | 0.6717 | 0.3359 | 0.4478 | 0.3692 |
-| Support Vector Machine | 0.8460 | 0.8913 | 0.7574 | 0.5571 | 0.6420 | 0.5572 |
+| Logistic Regression | 0.8460 | 0.9047 | 0.7316 | 0.5981 | 0.6582 | 0.5648 |
+| Decision Tree | 0.8488 | 0.8939 | 0.7452 | 0.5923 | 0.6600 | 0.5706 |
+| KNN | 0.8268 | 0.8653 | 0.6719 | 0.5883 | 0.6273 | 0.5171 |
+| Naive Bayes | 0.6448 | 0.8507 | 0.4046 | 0.9188 | 0.5618 | 0.4120 |
+| Support Vector Machine | 0.8509 | 0.8972 | 0.7510 | 0.5959 | 0.6645 | 0.5766 |
 
 ### Observations on Model Performance
 
@@ -44,7 +44,7 @@ Predict whether an individual's annual income exceeds $50,000 based on demograph
 4. **Pipeline:** Each classifier is wrapped in a `sklearn.Pipeline(preprocessor + classifier)` — the entire pipeline is saved as a single `.joblib` file. The Streamlit app loads these pipelines and calls `predict()` on raw feature data; no retraining occurs.
 
 ## f. Live Streamlit App Link
-> [Add your deployed Streamlit app link here]
+https://adult-income-classifier-avyepcrh77kad97eyxj9rw.streamlit.app/
 
 ## Setup & Usage
 
