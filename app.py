@@ -129,8 +129,10 @@ with tab2:
                 "MCC":       round(matthews_corrcoef(y, yp),  4),
             })
             progress.progress((i + 1) / len(MODEL_FILES))
+        st.session_state["comp_df"] = pd.DataFrame(rows).set_index("Model")
 
-        comp_df = pd.DataFrame(rows).set_index("Model")
+    if "comp_df" in st.session_state:
+        comp_df = st.session_state["comp_df"]
         st.dataframe(comp_df.style.highlight_max(axis=0, color="#c6efce").format(precision=4),
                      use_container_width=True)
 
